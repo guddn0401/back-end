@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <entry key="selectLastProductCode">
+        SELECT MAX(A.PRODUCT_CODE)
+          FROM PRODUCT A
+    </entry>
+    <entry key="selectAllProductList">
+        SELECT A.PRODUCT_CODE
+             , A.PRODUCT_NAME
+             , A.PRODUCT_TYPE
+             , A.STORE_CODE
+             , A.CATEGORY_CODE
+        FROM PRODUCT A
+    </entry>
+
+    <entry key="insertProduct">
+        INSERT INTO PRODUCT
+        (
+          PRODUCT_CODE
+        , PRODUCT_TYPE
+        , PRODUCT_NAME
+        , STORE_CODE
+        , CATEGORY_CODE
+        )
+        VALUES
+        (
+        ?
+        , ?
+        , ?
+        , ?
+        , ?
+        )
+    </entry>
+    <entry key="selectOneProduct">
+        SELECT
+               PRODUCT_CODE
+             , PRODUCT_TYPE
+             , PRODUCT_NAME
+             , STORE_CODE
+             , CATEGORY_CODE
+          FROM PRODUCT
+         WHERE PRODUCT_CODE = ?
+
+    </entry>
+
+
+    <entry key="updateProduct">
+        UPDATE PRODUCT
+           SET
+               PRODUCT_TYPE = ?,
+               PRODUCT_NAME = ?,
+               CATEGORY_CODE = ?
+         WHERE PRODUCT_CODE = ?
+    </entry>
+
+    <entry key="deleteProduct">
+        DELETE
+          FROM PRODUCT
+         WHERE PRODUCT_CODE = ?
+    </entry>
+</properties>
